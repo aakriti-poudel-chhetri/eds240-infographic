@@ -15,7 +15,6 @@ eds240-infographic
 └─── README.md
 └─── eds240-infofraphic.Rproj
 └─── figs
-└─── images
 
 ```
 
