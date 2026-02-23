@@ -200,7 +200,7 @@ time_category_top <- time_category %>%
   filter(primary_category %in% top_categories)
 
 # Plot a line chart of reports over time by category
-ggplot(time_category_top, aes(x = report_year, y = report_count, color = primary_category)) +
+product_category <- ggplot(time_category_top, aes(x = report_year, y = report_count, color = primary_category)) +
   geom_line(linewidth = 1.2) +
   geom_point(size = 2) +
   facet_wrap(~primary_category, scales = "free_y", ncol = 2) +
@@ -223,6 +223,20 @@ ggplot(time_category_top, aes(x = report_year, y = report_count, color = primary
         legend.position = "none",
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+
+```{r}
+ggsave(
+  filename = here::here("images", "product-category-image.png"),
+  plot = product_category,
+  device = "png",
+  width = 14, 
+  height = 9,
+  unit = "in",
+  dpi = 300
+)
+
+```
+
 
 ## Answer questions
 
